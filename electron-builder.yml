@@ -1,0 +1,36 @@
+appId: com.wl-island.app
+productName: wl-Island
+copyright: Copyright © 2026 wl-Island contributors
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - package.json
+  - desktop/**/*
+  - "!**/*.map"
+  - "!**/*.md"
+
+asar: true
+asarUnpack:
+  - desktop/main/platform/*.ps1
+
+# ---------------------------------------------------------------- Windows
+# Architectures come from the CLI (`--x64`, `--arm64`). Declaring them here as
+# well makes electron-builder ALSO emit a combined multi-arch nsis, which then
+# fails its own "installer smaller than embedded archive" sanity check.
+win:
+  icon: build/icon.png
+  target:
+    - nsis
+  artifactName: ${productName}-${version}-win-${arch}.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: wl-Island
+  deleteAppDataOnUninstall: false

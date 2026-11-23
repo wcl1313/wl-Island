@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'none'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>wl-Island</title>
+  <link rel="stylesheet" href="./css/island.css" />
+  <link rel="stylesheet" href="./css/panels.css" />
+</head>
+<body>
+  <div id="stage">
+    <div id="island" data-state="collapsed" data-lyric="0" data-eyes="classic">
+      <!-- glass stack: artwork tint → ambient aurora → frosted body → specular → grain -->
+      <div class="layer tint" id="tint"></div>
+      <div class="layer aurora"></div>
+      <div class="layer glass"></div>
+      <div class="layer sheen"></div>
+      <div class="layer grain" id="grain"></div>
+      <div class="layer glow"></div>
+
+      <!-- collapsed: a pair of eyes that follow the cursor -->
+      <div class="pill" id="pill">
+        <div class="eyes" id="eyes" data-mood="idle" aria-hidden="true">
+          <span class="eye"><span class="iris"></span></span>
+          <span class="eye"><span class="iris"></span></span>
+        </div>
+        <div class="pill-main" id="pillMain">
+          <span class="pill-title" id="pillTitle">wl-Island</span>
+          <span class="pill-sub" id="pillSub"></span>
+        </div>
+        <!-- Two stacked lines so a lyric change can cross-fade upwards -->
+        <div class="pill-lyric" id="pillLyric" aria-live="off">
+          <span class="ly" id="lyA"><b></b></span>
+          <span class="ly" id="lyB"><b></b></span>
+        </div>
+        <div class="wave" id="pillWave" data-playing="0" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+        </div>
+        <span class="pill-clock" id="pillClock"></span>
+      </div>
+
+      <!-- expanded: header + panel + dock -->
+      <div class="panel">
+        <div class="panel-hd" id="panelHd">
+          <div class="hd-chip" id="hdChip"></div>
+          <div class="hd-text">
+            <h1 class="hd-title" id="hdTitle">媒体</h1>
+            <p class="hd-sub" id="hdSub"></p>
+          </div>
+          <div class="hd-actions">
+            <button class="ibtn" id="btnCollapse" title="收起 (Esc)">
+              <span class="ic" style="--ic:16px">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 9.4l5.4 5.2 5.4-5.2" /></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="view" id="view"></div>
+        <nav class="dock" id="dock"></nav>
+      </div>
+
+      <!-- drag-and-drop veil, only while files hover the island -->
+      <div class="drop-veil" id="dropVeil" aria-hidden="true">
+        <div class="dv-ring"></div>
+        <div class="dv-body">
+          <span class="dv-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3.4 13.4l2.3-8.1h12.6l2.3 8.1"/>
+              <path d="M3.4 13.4v3.9a2.3 2.3 0 002.3 2.3h12.6a2.3 2.3 0 002.3-2.3v-3.9"/>
+              <path d="M3.4 13.4h4.3l1.2 2.1h6.2l1.2-2.1h4.3"/>
+            </svg>
+          </span>
+          <span class="dv-t">松手放入中转站</span>
+          <span class="dv-s" id="dvCount">复制一份，原文件不动</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="banners"></div>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

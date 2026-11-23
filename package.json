@@ -1,0 +1,43 @@
+{
+  "name": "wl-island",
+  "productName": "wl-Island",
+  "version": "1.0.0",
+  "description": "wl-Island 灵动岛 — an Apple-flavoured Windows dynamic island: media, AI chat, devices, storage tuning, todos, clock and reminders.",
+  "main": "desktop/main/main.js",
+  "type": "commonjs",
+  "private": false,
+  "license": "MIT",
+  "author": "wl-Island contributors",
+  "homepage": "https://github.com/wl-island/wl-island",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wl-island/wl-island.git"
+  },
+  "keywords": [
+    "dynamic-island",
+    "electron",
+    "windows",
+    "desktop",
+    "media-control",
+    "now-playing",
+    "todo",
+    "productivity"
+  ],
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "lint": "node scripts/check-syntax.js",
+    "icon": "node scripts/gen-icon.js",
+    "dist": "electron-builder --win",
+    "dist:x64": "electron-builder --win --x64",
+    "dist:arm64": "electron-builder --win --arm64",
+    "dist:offline": "electron-builder --win --x64 --config.electronDist=node_modules/electron/dist"
+  },
+  "devDependencies": {
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

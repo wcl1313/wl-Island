@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>wl-Island 1.0</title>
+<link rel="stylesheet" href="promo.css" />
+</head>
+<body>
+<div id="stage">
+  <div id="bg">
+    <div class="blob" id="b1"></div>
+    <div class="blob" id="b2"></div>
+    <div class="blob" id="b3"></div>
+    <div class="floor"></div>
+    <div class="hair"></div>
+  </div>
+
+  <div id="fsvid">
+    <div class="tag"><b>全屏播放中</b><span>FULLSCREEN</span></div>
+    <div class="bar"><div class="p"><i></i></div></div>
+  </div>
+
+  <div id="wordmark">
+    <div class="k">WINDOWS&nbsp;&nbsp;DYNAMIC&nbsp;&nbsp;ISLAND</div>
+    <h1>wl-Island</h1>
+    <div class="s">桌面之上，多了一点生命</div>
+  </div>
+
+  <div id="scaler">
+    <div id="aura"></div>
+    <div id="island" data-eyes="classic">
+      <div class="sheen"></div>
+      <div class="edge"></div>
+
+      <div id="eyes">
+        <div class="eye"><div class="iris"></div><div class="shine"></div><div class="lid"></div></div>
+        <div class="eye"><div class="iris"></div><div class="shine"></div><div class="lid"></div></div>
+      </div>
+      <div id="clock">21:04</div>
+
+      <div id="head">
+        <div class="chip" id="hIcon"></div>
+        <div class="titles">
+          <div class="t" id="hT">媒体</div>
+          <div class="s" id="hS">正在播放</div>
+        </div>
+        <div class="chev">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9.5l6 6 6-6"/></svg>
+        </div>
+      </div>
+
+      <!-- ---------------------------------------------------------- media -->
+      <section class="sc" id="scMedia">
+        <div class="cover"><div class="glowdot"></div><div class="ring"></div></div>
+        <div class="mt">
+          <div class="t1">Azure Skies</div>
+          <div class="t2">trxxshed · Philichordia · a l e x</div>
+          <div class="t3" id="mState">正在播放</div>
+        </div>
+        <div id="wave"></div>
+        <div class="prog"><i id="progFill"></i></div>
+        <div class="ptime"><span id="pT">1:12</span><span id="pD">3:06</span></div>
+        <div class="ctrl">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 6v12l-8-6 8-6zM6 5h2v14H6z"/></svg>
+          <div class="big">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5h3v14H8zM13 5h3v14h-3z"/></svg>
+          </div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6l8 6-8 6V6zM16 5h2v14h-2z"/></svg>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------- AI -->
+      <section class="sc" id="scAI">
+        <div id="orb"><div class="sph"></div><div class="sph2"></div><div class="core"></div></div>
+        <div class="chat">
+          <div class="bub me" id="bubMe">帮我把这周没做完的事排一下</div>
+          <div class="bub ai" id="bubAi">
+            <div class="who">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 5.6L19.5 9.5 13.9 11.4 12 17l-1.9-5.6L4.5 9.5l5.6-1.9L12 2z"/></svg>
+              wl-Island
+            </div>
+            <div class="txt" id="aiTxt"></div>
+          </div>
+        </div>
+        <div class="tokbar"><span id="tokL">4.8k / 64k</span><span class="track"><i id="tokFill"></i></span><span id="tokR">¥ 18.40</span></div>
+        <div class="input">
+          <span id="inpHolder">问点什么…</span>
+          <span class="send">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------- todo -->
+      <section class="sc" id="scTodo">
+        <div class="td-add">
+          <span class="td-val" id="tdTyped"></span>
+          <i class="cur" id="tdCur"></i>
+          <span class="ph" id="tdPh">添加一条待办，回车保存</span>
+          <span class="plus">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </div>
+        <div class="td-list" id="tdList">
+          <div class="td-row" data-i="0" data-flag="1"><span class="ck"></span><span class="tx">设计稿终审</span><span class="star">★</span></div>
+          <div class="td-row" data-i="1"><span class="ck"></span><span class="tx">周报初稿</span></div>
+          <div class="td-row" data-i="2" data-done="1"><span class="ck">✓</span><span class="tx">回复客户邮件</span></div>
+          <div class="td-row" data-i="3" id="tdNew" data-fresh="1"><span class="ck"></span><span class="tx">给客户的报价单</span></div>
+        </div>
+        <div class="td-foot"><span id="tdCount">3 项待完成 · 1 项已完成</span><span class="td-clear">清除已完成</span></div>
+      </section>
+
+      <!-- --------------------------------------------------------- files -->
+      <section class="sc" id="scFiles">
+        <div class="drop-zone" id="dropZone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.4l8-3.6 8 3.6-8 3.6-8-3.6z"/><path d="M4 12.4l8 3.6 8-3.6M4 16.2l8 3.6 8-3.6"/></svg>
+          <div class="dz1">拖文件到这里</div>
+          <div class="dz2">之后可以拖给任何应用，或直接打开</div>
+        </div>
+        <div class="fs-head"><span id="fsCount">2 个文件</span><span class="fs-tools">清空</span></div>
+        <div class="fs-list" id="fsList">
+          <div class="fs-row" data-i="0"><span class="kind">IMG</span><span class="meta"><b>界面终稿.png</b><i>2.4 MB · 刚刚</i></span></div>
+          <div class="fs-row" data-i="1"><span class="kind">PDF</span><span class="meta"><b>合同-终版.pdf</b><i>860 KB · 3 分钟前</i></span></div>
+          <div class="fs-row" data-i="2" id="fsNew"><span class="kind">ZIP</span><span class="meta"><b>素材包.zip</b><i>18 MB · 刚刚</i></span></div>
+        </div>
+      </section>
+
+      <!-- --------------------------------------------------------- themes -->
+      <section class="sc" id="scTheme">
+        <div class="tgrid" id="tgrid"></div>
+        <div class="eye-row" id="eyeRow"></div>
+      </section>
+
+      <!-- -------------------------------------------------------- devices -->
+      <section class="sc" id="scDevice">
+        <div class="tabs">
+          <div class="tb">概览</div><div class="tb" data-on="1">设备</div><div class="tb">优化</div>
+        </div>
+        <div class="devlist" id="devList"></div>
+      </section>
+
+      <!-- ----------------------------------------------------------- tune -->
+      <section class="sc" id="scTune">
+        <div class="ringwrap">
+          <svg width="92" height="92" viewBox="0 0 92 92">
+            <circle cx="46" cy="46" r="38" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="7"/>
+            <circle id="ringArc" cx="46" cy="46" r="38" fill="none" stroke="#30d158" stroke-width="7"
+              stroke-linecap="round" transform="rotate(-90 46 46)" stroke-dasharray="238.8" stroke-dashoffset="238.8"/>
+          </svg>
+          <div class="lb"><b id="cFree">74</b><span>GB 可用</span></div>
+        </div>
+        <div class="tune-lines">
+          <div class="tl"><span>C: 已用</span><b id="cUsed">168 GB</b></div>
+          <div class="tl"><span>临时文件</span><b id="cTemp">3.2 GB</b></div>
+          <div class="tl"><span>休眠文件</span><b id="cHib">6.4 GB</b></div>
+        </div>
+        <div class="cleanbar">
+          <div class="fill" id="cleanFill"></div>
+          <div class="txt">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2.2" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>
+            <span id="cleanTxt">正在清理临时文件…</span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dock"></div>
+    </div>
+
+    <div id="banner">
+      <div class="bic">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M6.6 16.6V11a5.4 5.4 0 1110.8 0v5.6l1.6 2H5l1.6-2z"/><path d="M10.4 19.4a1.8 1.8 0 003.2 0"/></svg>
+      </div>
+      <div class="bx">
+        <div class="bt">起来走两步</div>
+        <div class="bs">已经坐了两个小时，喝水、活动一下</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="ghost">
+    <div class="gm">ZIP</div>
+    <div class="gx"><div class="gn">素材包.zip</div><div class="gs">18 MB</div></div>
+  </div>
+
+  <div id="caption">
+    <div class="k" id="capK">WL-ISLAND</div>
+    <div class="t" id="capT"></div>
+  </div>
+
+  <div id="end">
+    <div class="h1">wl-Island</div>
+    <div class="row">
+      <span class="badge">1.0</span>
+      <span class="badge">Windows 10 &amp; 11</span>
+      <span class="badge">免费 · 开源</span>
+    </div>
+    <div class="dl">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M4.5 19.5h15"/></svg>
+      下载 wl-Island 1.0
+    </div>
+  </div>
+
+  <div id="vignette"></div>
+  <div id="grain"></div>
+</div>
+<script src="promo.js"></script>
+</body>
+</html>
